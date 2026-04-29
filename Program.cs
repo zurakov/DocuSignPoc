@@ -18,9 +18,10 @@ builder.Services.AddScoped<IStorageBroker, StorageBroker>();
 builder.Services.AddTransient<IDocuSignService, DocuSignService>();
 builder.Services.AddTransient<ISignatureRequestService, SignatureRequestService>();
 builder.Services.AddTransient<IQuickBooksService, QuickBooksService>();
+
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll",
+    options.AddPolicy(name: "AllowAll",
         builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 });
 
